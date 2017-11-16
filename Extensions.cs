@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace LinqExample
 {
@@ -33,6 +34,17 @@ namespace LinqExample
             }
 
             return true;
+        }
+
+        public static IEnumerable<T> LogQuery<T>
+            (this IEnumerable<T> sequence, string tag)
+        {
+            using (var writer = File.AppendText("debug.log"))
+            {
+                writer.WriteLine($"Executin Query {tag}");
+            }
+
+            return sequence;
         }
     }
 }
