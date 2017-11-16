@@ -36,7 +36,9 @@ namespace LinqExample
         {
             var startingDeck = (from s in Suits().LogQuery("Suit Generation")
                                 from r in Ranks().LogQuery("Rank Generation")
-                                select new { Suit = s, Rank = r }).LogQuery("Starting Deck");
+                                select new { Suit = s, Rank = r })
+                                .LogQuery("Starting Deck")
+                                .ToArray();
 
 
             foreach (var c in startingDeck)
@@ -52,7 +54,8 @@ namespace LinqExample
             {
                 shuffle = shuffle.Skip(26).LogQuery("Bottom Half")
                     .InterleaveSequenceWith(shuffle.Take(26).LogQuery("Top Half"))
-                    .LogQuery("Shuffle");
+                    .LogQuery("Shuffle")
+                    .ToArray();
 
                 foreach (var c in shuffle)
                 {
