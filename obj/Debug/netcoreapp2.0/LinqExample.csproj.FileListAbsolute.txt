@@ -1,0 +1,10 @@
+D:\C#-projects\LinqExample\bin\Debug\netcoreapp2.0\LinqExample.deps.json
+D:\C#-projects\LinqExample\bin\Debug\netcoreapp2.0\LinqExample.runtimeconfig.json
+D:\C#-projects\LinqExample\bin\Debug\netcoreapp2.0\LinqExample.runtimeconfig.dev.json
+D:\C#-projects\LinqExample\bin\Debug\netcoreapp2.0\LinqExample.dll
+D:\C#-projects\LinqExample\bin\Debug\netcoreapp2.0\LinqExample.pdb
+D:\C#-projects\LinqExample\obj\Debug\netcoreapp2.0\LinqExample.csproj.CoreCompileInputs.cache
+D:\C#-projects\LinqExample\obj\Debug\netcoreapp2.0\LinqExample.AssemblyInfoInputs.cache
+D:\C#-projects\LinqExample\obj\Debug\netcoreapp2.0\LinqExample.AssemblyInfo.cs
+D:\C#-projects\LinqExample\obj\Debug\netcoreapp2.0\LinqExample.dll
+D:\C#-projects\LinqExample\obj\Debug\netcoreapp2.0\LinqExample.pdb
