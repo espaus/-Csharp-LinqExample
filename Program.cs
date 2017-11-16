@@ -38,7 +38,8 @@ namespace LinqExample
                                from r in Ranks()
                                select new { Suit = s, Rank = r };
 
-            
+
+            /*
             foreach (var c in startingDeck)
             {
                 Console.WriteLine(c);
@@ -54,6 +55,25 @@ namespace LinqExample
             {
                 Console.WriteLine(c);
             }
+            */
+
+            var times = 0;
+            var shuffle = startingDeck;
+
+            do
+            {
+                shuffle = shuffle.Take(26).InterleaveSequenceWith(shuffle.Skip(26));
+
+                foreach (var c in shuffle)
+                {
+                    Console.WriteLine(c);
+                }
+
+                Console.WriteLine();
+                times++;
+            } while (!startingDeck.SequenceEquals(shuffle));
+
+            Console.WriteLine(times);
         }
     }
 }
