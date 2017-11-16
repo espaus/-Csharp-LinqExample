@@ -4,39 +4,44 @@ using System.Linq;
 
 namespace LinqExample
 {
+    public enum Suit
+    {
+        Clubs,
+        Diamonds,
+        Hearts,
+        Spades
+
+    }
+
+    public enum Rank
+    {
+        Two,
+        Three,
+        Four,
+        Five,
+        Six,
+        Seven,
+        Eight,
+        Nine,
+        Ten,
+        Jack,
+        Queen,
+        King,
+        Ace
+    }
+
     class Program
     {
-        static IEnumerable<string> Suits()
-        {
-            yield return "clubs";
-            yield return "diamonds";
-            yield return "hearts";
-            yield return "spades";
-        }
+        static IEnumerable<Suit> Suits() => Enum.GetValues(typeof(Suit)) as IEnumerable<Suit>;
 
-        static IEnumerable<string> Ranks()
-        {
-            yield return "two";
-            yield return "three";
-            yield return "four";
-            yield return "five";
-            yield return "six";
-            yield return "seven";
-            yield return "eight";
-            yield return "nine";
-            yield return "ten";
-            yield return "jack";
-            yield return "queen";
-            yield return "king";
-            yield return "ace";
-        }
+        static IEnumerable<Rank> Ranks() => Enum.GetValues(typeof(Rank)) as IEnumerable<Rank>;
 
 
         static void Main(string[] args)
         {
             var startingDeck = (from s in Suits().LogQuery("Suit Generation")
                                 from r in Ranks().LogQuery("Rank Generation")
-                                select new { Suit = s, Rank = r })
+                                select new PlayingCard(s, r))
                                 .LogQuery("Starting Deck")
                                 .ToArray();
 
